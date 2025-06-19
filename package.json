@@ -1,0 +1,48 @@
+{
+  "name": "desktop-printing-app",
+  "version": "1.0.0",
+  "description": "نظام إدارة الطباعة - تطبيق سطح المكتب",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "printing",
+    "management",
+    "arabic",
+    "electron",
+    "desktop"
+  ],
+  "author": "Printing Management Team",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^36.4.0"
+  },
+  "build": {
+    "appId": "com.printingmanagement.desktop",
+    "productName": "نظام إدارة الطباعة",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  }
+}
